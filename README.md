@@ -10,12 +10,31 @@ This module is for working with the [Mechanical Turk](https://www.mturk.com/mtur
 
     npm install mturk
 
+Once you have the package installed navigate to the folder and run "npm" in your terminal window. This command will install the needed dependencies for the package: mocha, chai, crypto, request, libxmljs, validator, querystring, and async.   
+
+If you are running on OSX make sure you have Xcode installed from the app store.
+
+# Amazon Accounts Needed
+
+You will need the following accounts form Amazon to get started (make sure all accounts use the same username and password):
+
+Amazon Web Services (AWS) - login here to to get your access key and secret access key
+Mechanical Turk Account - service to post HITs
+Mechanical Turk Sandbox -  used to test how your HITs will be displayed
+
+Be sure all accounts are registered before starting to use the code.
+
 # Use
-You must sign up for a Mechanical Turk account and then find [your Access Key and Secret Key](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMechanicalTurkRequester/MakingRequests_RequestAuthenticationArticle.html).
+Create a file "aws_creds.js" in the test folder with the following lines of code:
 
 	var creds = {accessKey: "YOUR_ACCESS_KEY", secretKey: "YOUR_SECRET_KEY"};
-    var mturk  = require("../index")({creds: creds, sandbox: true});
+    	var mturk  = require("../index")({creds: creds, sandbox: true});
+    	module.exports = {accessKey: "YOUR_ACCESS_KEY", secretKey: "YOUR_SECRET_KEY"};
 
+
+You must sign up for a Mechanical Turk account and then find [your Access Key and Secret Key](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMechanicalTurkRequester/MakingRequests_RequestAuthenticationArticle.html).
+
+	
 ### Create a HIT Type
 
 The HIT Type defines a bunch of things about the HIT such as approval time, reward, etc. and can be used for multiple HITs.  You must register at least one of these before creating a HIT.
