@@ -18,8 +18,8 @@ If you are running on OSX make sure you have Xcode installed from the app store.
 
 You will need the following accounts form Amazon to get started (make sure all accounts use the same username and password):
 
-Amazon Web Services (AWS) - login here to to get your access key and secret access key
-Mechanical Turk Account - service to post HITs
+Amazon Web Services (AWS) - login here to to get your access key and secret access key <br>
+Mechanical Turk Account - service to post HITs <br>
 Mechanical Turk Sandbox -  used to test how your HITs will be displayed
 
 Be sure all accounts are registered before starting to use the code.
@@ -27,7 +27,7 @@ Be sure all accounts are registered before starting to use the code.
 # Use
 Create a file "aws_creds.js" in the test folder with the following lines of code:
 
-	var creds = {accessKey: "YOUR_ACCESS_KEY", secretKey: "YOUR_SECRET_KEY"};
+		var creds = {accessKey: "YOUR_ACCESS_KEY", secretKey: "YOUR_SECRET_KEY"};
     	var mturk  = require("../index")({creds: creds, sandbox: true});
     	module.exports = {accessKey: "YOUR_ACCESS_KEY", secretKey: "YOUR_SECRET_KEY"};
 
